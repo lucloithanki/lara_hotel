@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('font.index');
 });
+Route::get('',function() {
+    return view('font.faq');
+})->name('faq');
