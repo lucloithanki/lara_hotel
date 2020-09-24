@@ -12,9 +12,7 @@ class memberSeeder extends Seeder
     public function run()
     {
         $faker = Faker\Factory::create();
-
         $limit = 6;
-
         for ($i = 0; $i < $limit; $i++) {
             DB::table('members')->insert([
                 'name' => $faker->name,
@@ -23,6 +21,7 @@ class memberSeeder extends Seeder
                 'address' => $faker->address(),
                 'age' => rand(8,70),
                 'avatar' => $faker->imageUrl($width = 640, $height = 480),
+                'password' => ''
             ]);
         }
     }

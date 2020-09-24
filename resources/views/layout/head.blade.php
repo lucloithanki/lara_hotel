@@ -88,7 +88,7 @@
                         <ul>
                             <li class="active"><a href="index.html">HOME</a></li>
                             <li><a href="shop.html">SHOP</a>
-                                <ul class="sub-menu">
+                                <ul class="sub-menu"> 
                                     <li><a href="#">Đồ chơi thông minh</a></li>
                                     <li><a href="#">Đồ chơi vận động</a></li>
                                     <li><a href="#">Xe đồ chơi trẻ em</a></li>
