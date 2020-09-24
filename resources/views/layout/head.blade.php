@@ -36,9 +36,8 @@
             <div class="col mt-10 mb-10">
                 <!-- Header Shop Links Start -->
                 <div class="header-top-right">
-
-                    <p><a href="#">My Account</a></p>
-                    <p><a href="login-register.html">Register</a><a href="login-register.html">Login</a></p>
+                    <!-- <p><a href="#">My Account</a></p> -->
+                    <p><a href="{{ route('dang-nhap') }}">Đăng Nhập</a><a href="{{ route('dang-ky') }}">Đăng Ký</a></p>
 
                 </div><!-- Header Shop Links End -->
             </div>
@@ -55,7 +54,7 @@
             <div class="col mt-15 mb-15">
                 <!-- Logo Start -->
                 <div class="header-logo">
-                    <a href="index.html">
+                    <a href="{{ route('/') }}">
                         <img src="assets/images/logo.png" alt="Jadusona">
                     </a>
                 </div><!-- Logo End -->
@@ -87,30 +86,23 @@
                     <nav>
                         <ul>
                             <li class="active"><a href="index.html">HOME</a></li>
-                            <li><a href="shop.html">SHOP</a>
+                            <li><a href="shop.html">Shop now</a>
                                 <ul class="sub-menu"> 
-                                    <li><a href="#">Đồ chơi thông minh</a></li>
-                                    <li><a href="#">Đồ chơi vận động</a></li>
-                                    <li><a href="#">Xe đồ chơi trẻ em</a></li>
-                                    <li><a href="#">Đồ dùng cho bé</a></li>
-                                    <li><a href="#">Bể bơi phao bơi</a></li>
+                                    <li><a href="#">Bé uống</a></li>
+                                    <li><a href="#">Bé ăn dặm </a></li>
+                                    <li><a href="#">Bé chơi & học</a></li>
+                                    <li><a href="#">Bé mặc</a></li>
+                                    <li><a href="#">Bé vệ sinh</a></li>
+                                    <li><a href="#">Bé khỏe & an toàn</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">PAGES</a>
-                                <ul class="sub-menu">
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="login-register.html">Login & Register</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="blog.html">BLOG</a>
+                            <!-- <li><a href="blog.html">BLOG</a>
                                 <ul class="sub-menu">
                                     <li><a href="blog.html">Blog</a></li>
                                     <li><a href="single-blog.html">Single Blog</a></li>
                                 </ul>
-                            </li>
-                            <li><a href="contact.html">CONTACT</a></li>
+                            </li> -->
+                            <li><a href="{{ route('lien-he') }}">Liên Hệ</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -122,40 +114,4 @@
         </div>
     </div>
 </div><!-- Header BOttom End -->
-
 </div><!-- Header Section End -->
-<!-- Hero Section Start -->
-<div class="hero-section section">
-
-<!-- Hero Slider Start -->
-<div class="hero-slider hero-slider-one fix">
-
-    <!-- Hero Item Start -->
-                        <div class="hero-item" style="background-image: url(assets/images/hero/hero-1.jpg)">
-
-        <!-- Hero Content -->
-        <div class="hero-content">
-
-            <h1>Get 35% off <br>Latest Baby Product</h1>
-            <a href="#">SHOP NOW</a>
-
-        </div>
-
-    </div><!-- Hero Item End -->
-
-    <!-- Hero Item Start -->
-    <div class="hero-item" style="background-image: url({{ asset('assets/images/hero/hero-2.jpg)">
-
-        <!-- Hero Content -->
-        <div class="hero-content">
-
-            <h1>Get 35% off <br>Latest Baby Product</h1>
-            <a href="#">SHOP NOW</a>
-
-        </div>
-
-    </div><!-- Hero Item End -->
-
-</div><!-- Hero Slider End -->
-
-</div><!-- Hero Section End -->

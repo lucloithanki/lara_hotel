@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title></title>
+    <title>@yield('title')</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -32,11 +32,10 @@
     <script src="{{ asset('assets/js/vendor/modernizr-2.8.3.min.js') }}"></script>
 </head>
     @include('layout.head')
-    @section('content')
+    @include('layout.slider')
     <div class="main-wrapper">
-
+    @yield('content')
     </div>
-    @endsection
     @include('layout.footer')
 <body>
 

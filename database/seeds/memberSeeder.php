@@ -21,7 +21,7 @@ class memberSeeder extends Seeder
                 'address' => $faker->address(),
                 'age' => rand(8,70),
                 'avatar' => $faker->imageUrl($width = 640, $height = 480),
-                'password' => ''
+                'password' => '$2y$10$tReAWMlJxG8Sz/QpzfkncuHpc6G/ZpTlyox1DX8u4lYKSqY0eFiBG'
             ]);
         }
     }
