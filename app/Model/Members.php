@@ -18,6 +18,6 @@ class Members extends Model
     ];
 
     public function comments() {
-        return $this->belongsTo(Comments::class,'id_comment','id_product');
+        return $this->belongsTo(Comments::class,'id_comment');
     }
 }

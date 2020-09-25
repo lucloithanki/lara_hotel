@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Model\Products;
+use App\Model\Members;
+use App\Model\Categorys;
+use App\Model\Comments;
+use App\Model\Sliders;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,5 +30,13 @@ Route::get('lien-he', function () {
 
 Route::get('/', function () {
     // dd(bcrypt('123456'));
-    return view('welcome');
+    $pro = Products::with('categorys')->get()->all();
+    $com = Comments::with('members')->get()->all();
+    $sli = Sliders::get()->all();
+    // dd($com);
+    return view('welcome',[
+        'product'=>$pro,
+        'slider'=>$sli,
+        'comment'=>$com
+    ]);
 })->name('/');

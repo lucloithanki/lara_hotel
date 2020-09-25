@@ -20,6 +20,6 @@ class Products extends Model
     ];
 
     public function categorys() {
-        return $this->hasOne(Categorys::class,'id_product','id_cate');
+        return $this->belongsTo(Categorys::class,'id_cate');
     }
 }

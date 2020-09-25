@@ -1,24 +1,20 @@
 <!-- Hero Section Start -->
 <div class="hero-section section">
-<!-- Hero Slider Start -->
-    <div class="hero-slider hero-slider-one fix">
+    <!-- Hero Slider Start -->
+<div class="hero-slider hero-slider-two fix">
+    @foreach( $slider as $item  )
     <!-- Hero Item Start -->
-        <div class="hero-item" style="background-image: url(assets/images/hero/hero-1.jpg)">
-        <!-- Hero Content -->
-        <div class="hero-content">
-            <h1>Mọi mặt hàng bé ăn giảm giá <br></h1>
-            <a href="#">Chi tiết</a>
-        </div>
-    </div><!-- Hero Item End -->
+    <div class="hero-item" style="background-image: url({{ $item->anh }})">
 
-    <!-- Hero Item Start -->
-    <div class="hero-item" style="background-image: url({{ asset('assets/images/hero/hero-2.jpg)">
-        <!-- Hero Content -->
-        <div class="hero-content">
-            <h1>Giảm giá 30%<br>Khi mua online</h1>
-            <a href="#">Mua ngay</a>
-        </div>
-    </div><!-- Hero Item End -->
+<!-- Hero Content -->
+<div class="hero-content">
 
+    <!-- <h1>Get 35% off <br>Latest Baby Product</h1> -->
+    <!-- <a href="#">SHOP NOW</a> -->
+
+</div>
+
+</div><!-- Hero Item End -->
+    @endforeach
     </div><!-- Hero Slider End -->
 </div><!-- Hero Section End -->
