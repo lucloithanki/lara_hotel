@@ -70,11 +70,9 @@
                                     <div class="content-top-left">
                                         <h4 class="title"><a href="#">{{ $topview->ten }}</a></h4>
                                         </div>
-
                                     <div class="content-top-right">
                                         <span class="price">{{ $topview->gia }} <del class="old">{{ ($topview->gia)+10000 }}</del></span>
                                     </div>
-
                                 </div>
                                 <div class="content-bottom">
                                     <div class="countdown" data-countdown="2020/09/26"></div>

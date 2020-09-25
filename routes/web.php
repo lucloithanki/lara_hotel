@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Model\Products;
 use App\Model\Members;
 use App\Model\Categorys;
@@ -34,7 +35,7 @@ Route::get('/', function () {
     $com = Comments::with('members')->get()->all();
     $sli = Sliders::get()->all();
     $sptopview = Products::get()->sortByDesc('view')->first();
-    // dd($sptopview);
+    // dd($pro);
     return view('welcome',[
         'product'=>$pro,
         'slider'=>$sli,
@@ -43,3 +44,7 @@ Route::get('/', function () {
     ]);
 
 })->name('/');
+Route::get('/test ' ,function() {
+    $item = Products::all()->where('id_product','=',1);
+    dd($item);
+});
