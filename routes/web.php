@@ -33,10 +33,13 @@ Route::get('/', function () {
     $pro = Products::with('categorys')->get()->all();
     $com = Comments::with('members')->get()->all();
     $sli = Sliders::get()->all();
-    // dd($com);
+    $sptopview = Products::get()->sortByDesc('view')->first();
+    // dd($sptopview);
     return view('welcome',[
         'product'=>$pro,
         'slider'=>$sli,
-        'comment'=>$com
+        'comment'=>$com,
+        'topview' =>$sptopview
     ]);
+
 })->name('/');

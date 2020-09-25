@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->bigInteger('gia');
             $table->bigInteger('so_luong');
             $table->foreignId('id_cate');
+            $table->bigIneger('view');
             $table->string('img');
             $table->string('img1')->nullable();
             $table->string('img2')->nullable();

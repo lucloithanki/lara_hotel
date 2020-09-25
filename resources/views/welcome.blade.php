@@ -46,56 +46,115 @@
         </div>
     </div><!-- Feature Section End -->
 
-   <!-- Product Section Start -->
-   <div class="product-section section mb-40 mb-lg-20 mb-md-20 mb-sm-20 mb-xs-0">
-   <br/>
+<!-- Product Section Start -->
+<div class="product-section section mb-40 mb-lg-20 mb-md-20 mb-sm-20 mb-xs-0">
+    <br/>
         <div class="container">
-
             <div class="row">
-                <div class="section-title text-center col mb-30">
-                    <h1>Sản Phẩm Thịnh Hành</h1>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
-                    <div class="product-item">
-                        <div class="product-inner">
-                            <div class="image">
-                                <img src="https://lorempixel.com/640/480" alt="">
+                <div class="col-lg-4 col-md-6 col-12 mb-40">
 
-                                <div class="image-overlay">
-                                    <div class="action-buttons">
-                                        <button>Chọn</button>
-                                        <button>add to wishlist</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content">
-                                <div class="content-left">
-                                    <h4 class="title"><a href="single-product.html">Tmart Baby Dress</a></h4>
-                                    <h5 class="color">Kho_> </h5>
-                                    <h5 class="color">Danh mục_> </h5>
-                                </div>
-
-                                <div class="content-right">
-                                <del class="price">$25</del>
-                                <span class="price">$25</span>
-                                </div>
-
-                            </div>
-
+                    <div class="row">
+                        <div class="section-title text-left col mb-30">
+                            <h1>Giá Sốc</h1>
+                            <p>Lựa chọn tốt nhất cho bé</p>
                         </div>
+                    </div>
+
+                    <div class="best-deal-slider row">
+                        
+                        <div class="slide-item col">
+                            <div class="best-deal-product">
+                                <div class="image"><img src="{{ $topview->img }}" alt=""></div>
+                                <div class="content-top">
+                                    <div class="content-top-left">
+                                        <h4 class="title"><a href="#">{{ $topview->ten }}</a></h4>
+                                        </div>
+
+                                    <div class="content-top-right">
+                                        <span class="price">{{ $topview->gia }} <del class="old">{{ ($topview->gia)+10000 }}</del></span>
+                                    </div>
+
+                                </div>
+                                <div class="content-bottom">
+                                    <div class="countdown" data-countdown="2020/09/26"></div>
+                                    <a href="#" data-hover="SHOP NOW">Chi Tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+
+                        <div class="slide-item col">
+                            <div class="best-deal-product">
+                                <div class="image"><img src="assets/images/product/best-deal-2.jpg" alt=""></div>
+
+                                <div class="content-top">
+
+                                    <div class="content-top-left">
+                                        <h4 class="title"><a href="#">Kelly Shirt Set</a></h4>
+                                        <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="content-top-right">
+                                        <span class="price">$09 <span class="old">$25</span></span>
+                                    </div>
+
+                                </div>
+
+                                <div class="content-bottom">
+                                    <div class="countdown" data-countdown="2019/06/20"></div>
+                                    <a href="#" data-hover="SHOP NOW">SHOP NOW</a>
+                                </div>
+
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
 
+                <div class="col-lg-8 col-md-6 col-12 pl-50 pl-sm-15 pl-xs-15">
+
+                    <div class="row">
+                        <div class="section-title text-left col mb-30">
+                            <h1>Tất cả sản phẩm</h1>
+                            <p>*Miến phí ship cho 100 đơn hàng đầu tiên trong ngày</p>
+                        </div>
+                    </div>
+
+                    <div class="small-product-slider row row-7">
+                     @foreach($product as $data)   
+                        <div class="col mb-40">
+                            <div class="on-sale-product">
+                                <a href="single-product.html" class="image"><img src="{{ $data->img }}" alt=""></a>
+                                <div class="content text-center">
+                                    <h4 class="title"><a href="#">{{ $data->ten }}</a></h4>
+                                    <span class="price">{{ $data->gia }} VNĐ<span class="old">{{ (($data->gia)+100) }}</span></span>
+                                    <span class="">Danh mục {{ $data->name_cate  }} </span>
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                    @endforeach
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
-
         </div>
     </div><!-- Product Section End -->
-    
+
+    <!-- Feature Section Start -->    
     
 
     @endsection

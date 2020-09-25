@@ -1238,7 +1238,7 @@ img.mfp-img {
 
 /*-- Hero Item --*/
 .hero-item {
-  background-size: cover;
+  background-size: 100% 530px;
   background-repeat: no-repeat;
   background-position: center center;
   padding: 190px 30px;
@@ -1250,15 +1250,19 @@ img.mfp-img {
   justify-content: center; }
   @media only screen and (min-width: 1200px) and (max-width: 1599px) {
     .hero-item {
+      background-size: contain;
       padding: 90px 30px; } }
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .hero-item {
+      background-size: contain;
       padding: 100px 30px; } }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .hero-item {
+      background-size: contain;
       padding: 120px 30px; } }
   @media only screen and (max-width: 767px) {
     .hero-item {
+      background-size: contain;
       padding: 80px 30px; } }
   @media only screen and (max-width: 767px) {
     .hero-item {
