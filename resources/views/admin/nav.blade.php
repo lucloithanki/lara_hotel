@@ -1,32 +1,45 @@
-<!-- MENU SIDEBAR-->
-<aside class="menu-sidebar2">
-            <div class="logo">
-                <a href="#">
-                    <img src="{{ asset('assets/images/logo.png')}}" alt="Jadusona ADmin" />
-                </a>
-            </div>
-            <div class="menu-sidebar2__content js-scrollbar1">
-                <div class="account2">
-                    <div class="image img-cir img-120">
-                        <img src="images/icon/avatar-big-01.jpg" alt="" />
+            <!-- BREADCRUMB-->
+            <section class="au-breadcrumb2">
+                <div class="container-fuild">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="au-breadcrumb-content">
+                                <div class="au-breadcrumb-left">
+                                    <span class="au-breadcrumb-span">You are here:</span>
+                                    <ul class="list-unstyled list-inline au-breadcrumb__list">
+                                        <li class="list-inline-item active">
+                                            <a href="#">@yield('name')</a>
+                                        </li>
+                                        <li class="list-inline-item seprate">
+                                            <span>/</span>
+                                        </li>
+                                        <li class="list-inline-item">@yield('page')</li>
+                                    </ul>
+                                </div>
+                                <form class="au-form-icon--sm" action="" method="post">
+                                    <input class="au-input--w300 au-input--style2" type="text" placeholder="Search for datas &amp; reports...">
+                                    <button class="au-btn--submit2" type="submit">
+                                        <i class="zmdi zmdi-search"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <h4 class="name">john doe</h4>
-                    <a href="#">Sign out</a>
                 </div>
-                <nav class="navbar-sidebar2">
-                    <ul class="list-unstyled navbar__list">
-                        <li class="active has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard
-                                <span class="arrow">
-                                    <i class="fas fa-angle-down"></i>
-                                </span>
-                            </a>
-                        </li>
-
-
-                    </ul>
-                </nav>
-            </div>
-        </aside>
-        <!-- END MENU SIDEBAR-->
+            </section>
+            <!-- END BREADCRUMB-->
+            
+            <!-- WELCOME-->
+            <section class="welcome p-t-12">
+                <div class="container-fuild">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="title-4">Welcome back
+                                <span>John!</span>
+                            </h1>
+                            <hr class="line-seprate">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END WELCOME-->

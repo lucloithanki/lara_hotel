@@ -26,84 +26,83 @@
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
     <link href="vendor/vector-map/jqvmap.min.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+    <style>
+.mySlides {display:none}
+</style>
 </head>
-
-<body class="animsition">
+<body class="animsition" style="animation-duration: 900ms; opacity: 1;">
     <div class="page-wrapper">
-        @include('admin.nav');
-        <!-- PAGE CONTAINER-->
-        <div class="page-container2">
-        @include('admin.head');   
-            <!-- BREADCRUMB-->
-            <section class="au-breadcrumb m-t-75">
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="au-breadcrumb-content">
-                                    <div class="au-breadcrumb-left">
-                                        <span class="au-breadcrumb-span">You are here:</span>
-                                        <ul class="list-unstyled list-inline au-breadcrumb__list">
-                                            <li class="list-inline-item active">
-                                                <a href="#">@yield('name')</a>
-                                            </li>
-                                            <li class="list-inline-item seprate">
-                                                <span>/</span>
-                                            </li>
-                                            <li class="list-inline-item">@yield('page')</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- END BREADCRUMB-->
-            <section>
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                        <div class="row">
-                            @yield('content')
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <!-- HEADER DESKTOP-->
+        @include('admin.head')
+        <!-- PAGE CONTENT-->
+        <div class="page-content--bgf7">
+        @include('admin.nav')
+            
+        @yield('content')    
 
         </div>
 
     </div>
 
     <!-- Jquery JS-->
-    <script src="{{ asset('vendor/jquery-3.2.1.min.js') }}"></script>
+    <script src="vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
-    <script src="{{ asset('vendor/bootstrap-4.1/popper.min.js') }}"></script>
-    <script src="{{ asset('vendor/bootstrap-4.1/bootstrap.min.js') }}"></script>
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
     <!-- Vendor JS       -->
-    <script src="{{ asset('vendor/slick/slick.min.js') }}">
+    <script src="vendor/slick/slick.min.js">
     </script>
-    <script src="{{ asset('vendor/wow/wow.min.js') }}"></script>
-    <script src="{{ asset('vendor/animsition/animsition.min.js') }}"></script>
-    <script src="{{ asset('vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }}">
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
     </script>
-    <script src="{{ asset('vendor/counter-up/jquery.waypoints.min.js') }}"></script>
-    <script src="{{ asset('vendor/counter-up/jquery.counterup.min.js') }}">
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
     </script>
-    <script src="{{ asset('vendor/circle-progress/circle-progress.min.js') }}"></script>
-    <script src="{{ asset('vendor/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
-    <script src="{{ asset('vendor/chartjs/Chart.bundle.min.js') }}"></script>
-    <script src="{{ asset('vendor/select2/select2.min.js') }}">
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
     </script>
-    <script src="{{ asset('vendor/vector-map/jquery.vmap.js') }}"></script>
-    <script src="{{ asset('vendor/vector-map/jquery.vmap.min.js') }}"></script>
-    <script src="{{ asset('vendor/vector-map/jquery.vmap.sampledata.js') }}"></script>
-    <script src="{{ asset('vendor/vector-map/jquery.vmap.world.js') }}"></script>
 
     <!-- Main JS-->
-    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="js/main.js"></script>
+    <!--SLider JS-->
+    <script>
+   var slideIndex = 1;
+   showDivs(slideIndex);
+   
+   function plusDivs(n) {
+     showDivs(slideIndex += n);
+   }
+   
+   function currentDiv(n) {
+     showDivs(slideIndex = n);
+   }
+   
+   function showDivs(n) {
+     var i;
+     var x = document.getElementsByClassName("mySlides");
+     var dots = document.getElementsByClassName("demo");
+     if (n > x.length) {slideIndex = 1}    
+     if (n < 1) {slideIndex = x.length}
+     for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+     }
+     for (i = 0; i < dots.length; i++) {
+       dots[i].className = dots[i].className.replace(" w3-red", "");
+     }
+     x[slideIndex-1].style.display = "block";  
+     dots[slideIndex-1].className += " w3-red";
+   }
+</script>
 
+
+
+<!-- end document-->
 </body>
 
 </html>
