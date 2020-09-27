@@ -18,14 +18,15 @@ class productSeeder extends Seeder
         for ($i = 0; $i < $limit; $i++) {
             DB::table('products')->insert([
                 'ten' => $faker->name,
-                'gia' => $faker->numberBetween(0,1000000),
+                'gia' => $faker->numberBetween(0,100000),
                 'so_luong' => rand(1,100),
                 'id_cate' => rand(1,10),
-                'img' => $faker->imageUrl($width = 640, $height = 480),
-                'img1' => $faker->imageUrl($width = 640, $height = 480),
-                'img2' => $faker->imageUrl($width = 640, $height = 480),
-                'img3' => $faker->imageUrl($width = 640, $height = 480),
-                'img4' => $faker->imageUrl($width = 640, $height = 480),
+                'img' => $faker->imageUrl($width = 270, $height = 320),
+                'mieuta'=> $faker->text(),
+                'img1' => $faker->imageUrl($width = 270, $height = 320),
+                'img2' => $faker->imageUrl($width = 270, $height = 320),
+                'img3' => $faker->imageUrl($width = 270, $height = 320),
+                'img4' => $faker->imageUrl($width = 270, $height = 320),
             ]);
         }
     }

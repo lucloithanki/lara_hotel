@@ -34,12 +34,14 @@ Route::get('/', function () {
     $pro = Products::with('categorys')->get()->all();
     $com = Comments::with('members')->get()->all();
     $sli = Sliders::get()->all();
+    $cate = Categorys::all();
     $sptopview = Products::get()->sortByDesc('view')->first();
     // dd($pro);
     return view('welcome',[
         'product'=>$pro,
         'slider'=>$sli,
         'comment'=>$com,
+        'category'=> $cate,
         'topview' =>$sptopview
     ]);
 
@@ -48,3 +50,20 @@ Route::get('/test ' ,function() {
     $item = Products::all()->where('id_product','=',1);
     dd($item);
 });
+
+Route::get('/admin', function() {
+    $cate = Categorys::all();
+    $pro = Products::all();
+    $slide = Sliders::all();
+    $comment = Comments::all();
+    $mem = Members::all();
+    return view('admin.home',
+        [
+            'cate' => $cate,
+            'pro' => $pro,
+            'slide' => $slide,
+            'member' => $mem,
+            'comment' => $comment
+        ]
+    );
+})->name('admin');

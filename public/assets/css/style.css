@@ -1178,6 +1178,8 @@ img.mfp-img {
 /*----------------------------------------*/
 /*-- Hero Slider One --*/
 .hero-slider-one .slick-arrow {
+  width: 100%;
+  height: 600px;
   position: absolute;
   top: 50%;
   border: none;
@@ -1238,7 +1240,7 @@ img.mfp-img {
 
 /*-- Hero Item --*/
 .hero-item {
-  background-size: 100% 530px;
+  background-size:contain;
   background-repeat: no-repeat;
   background-position: center center;
   padding: 190px 30px;
@@ -2650,7 +2652,7 @@ img.mfp-img {
   /*-- Content Top --*/
   /*-- Content Bottom --*/ }
   .best-deal-product .image img {
-    width: 100%; }
+    width: 100%; height: 450px;}
   .best-deal-product .content-top {
     position: absolute;
     top: 35px;
@@ -2691,7 +2693,7 @@ img.mfp-img {
         font-size: 24px;
         line-height: 1;
         font-family: "Dosis", sans-serif;
-        color: #ff708a;
+        color:#2d3436 ;
         font-weight: 600; }
         .best-deal-product .content-top .content-top-right .price .old {
           color: #94c7eb;
@@ -2867,7 +2869,7 @@ img.mfp-img {
       display: block;
       font-size: 18px;
       line-height: 24px;
-      color: #ff708a;
+      color: #2d3436;
       font-family: "Dosis", sans-serif;
       margin-bottom: 5px;
       font-weight: 600; }

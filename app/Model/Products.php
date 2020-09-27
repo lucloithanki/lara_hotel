@@ -20,6 +20,6 @@ class Products extends Model
     ];
 
     public function categorys() {
-        return $this->belongsTo(Categorys::class,'id_cate');
+        return $this->belongsTo(Categorys::class,'id_product');
     }
 }
