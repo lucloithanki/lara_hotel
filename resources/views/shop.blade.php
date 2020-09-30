@@ -27,7 +27,7 @@
                                 <img src="{{ $item->img }}" alt="">
                                 <div class="image-overlay">
                                     <div class="action-buttons">
-                                        <a href="{{ route('') }}">Chi Tiet</a>
+                                        <a href="shop/ {{$item->id_product}}">Chi Tiet</a>
                                     </div>
                                 </div>
                             </div>

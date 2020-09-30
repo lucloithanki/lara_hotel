@@ -34,7 +34,7 @@ Route::get('/', function () {
         'topview' =>$sptopview
     ]);})->name('/');
 
-Route::get('/shop' ,function() {
+Route::get('shop' ,function() {
         $data = Products::all()->get();
         $cate = Categorys::all();
         return view('shop',[
@@ -45,12 +45,10 @@ Route::get('/shop' ,function() {
 
 Route::get('shop/{id_cate}' ,function($id_cate) {
     $data = Products::where('id_cate',$id_cate)->get();
-    $one = Products::where('id_product',$id_pro)->get();
     $cate = Categorys::all();
     return view('shop',[
         'product'=>$data,
-        'category'=> $cate,
-        'one' => $one
+        'category'=> $cate
     ]);
 });
 
