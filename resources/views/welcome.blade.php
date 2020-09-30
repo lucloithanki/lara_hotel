@@ -1,6 +1,8 @@
 @extends('layout.page')
 @section('title','Jadusona Thế giới cho bé')
+
 @section('content')
+@include('layout.slider')
 <!-- Feature Section Start -->
 <div class="feature-section section bg-theme-two pt-65 pt-lg-55 pt-md-45 pt-sm-45 pt-xs-25 pb-65 pb-lg-55 pb-md-45 pb-sm-45 pb-xs-25 fix" style="background-image: url({{ asset('assets/assets/images/pattern/pattern-dot.png') }});">
         <div class="container">

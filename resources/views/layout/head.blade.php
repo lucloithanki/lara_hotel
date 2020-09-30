@@ -55,7 +55,7 @@
                 <!-- Logo Start -->
                 <div class="header-logo">
                     <a href="{{ route('/') }}">
-                        <img src="assets/images/logo.png" alt="Jadusona">
+                        <img src="{{ asset('assets/images/logo.png') }}" alt="Jadusona">
                     </a>
                 </div><!-- Logo End -->
             </div>
@@ -65,11 +65,11 @@
                 <div class="header-shop-links">
 
                     <div class="header-search">
-                        <button class="search-toggle"><img src="assets/images/icons/search.png" alt="Search Toggle"><img class="toggle-close" src="assets/images/icons/close.png" alt="Search Toggle"></button>
+                        <button class="search-toggle"><img src="{{ asset('assets/images/icons/search.png') }}" alt="Search Toggle"><img class="toggle-close" src="{{ asset('assets/images/icons/close.png') }}" alt="Search Toggle"></button>
                         <div class="header-search-wrap">
                             <form action="#">
                                 <input type="text" placeholder="Type and hit enter">
-                                <button><img src="assets/images/icons/search.png" alt="Search"></button>
+                                <button><img src="{{ asset('assets/images/icons/search.png') }}" alt="Search"></button>
                             </form>
                         </div>
                     </div>
@@ -85,15 +85,12 @@
                 <div class="main-menu">
                     <nav>
                         <ul>
-                            <li class="active"><a href="index.html">HOME</a></li>
-                            <li><a href="shop.html">Shop now</a>
+                            <li class="active"><a href="{{ route('/') }}">HOME</a></li>
+                            <li><a href="shop">Shop now</a>
                                 <ul class="sub-menu"> 
-                                    <li><a href="#">Bé uống</a></li>
-                                    <li><a href="#">Bé ăn dặm </a></li>
-                                    <li><a href="#">Bé chơi & học</a></li>
-                                    <li><a href="#">Bé mặc</a></li>
-                                    <li><a href="#">Bé vệ sinh</a></li>
-                                    <li><a href="#">Bé khỏe & an toàn</a></li>
+                                    @foreach($category as $items)
+                                    <li><a href="shop/{{$items->id_cate}}">{{$items->name_cate}}</a></li>
+                                    @endforeach    
                                 </ul>
                             </li>
                             <!-- <li><a href="blog.html">BLOG</a>

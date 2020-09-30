@@ -1,4 +1,4 @@
-@extends('admin.admin')
+@extends('admin.layout.admin')
 @section('title','ADMIN - Jadusona')
 @section('name','admin')
 @section('page','/')
@@ -48,7 +48,7 @@
             </section>
             <!-- END STATISTIC-->
             <div class="col-lg-12">
-<div class="card">
+            <div class="card">
    <div class="card-body">
       <div class="card-header text-danger">
          Quản Lý Slider
@@ -84,9 +84,10 @@
                      <td><img src="{{ $item->anh}}" alt="" srcset="" width="200px" height="80px"></td>
                      <td>
                         <div class="table-data-feature">
-                           <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                           <a href="{{ route('slider.edit',
+                           ['id_slider' => "$item->id_slider" ]) }}" class="item btn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
                            <i class="zmdi zmdi-edit"></i>
-                           </button>
+                           </a>
                            <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
                            <i class="zmdi zmdi-delete"></i>
                            </button>
@@ -121,6 +122,109 @@
                         </div>
                         <div class="col-12 col-md-9">
                            <input type="file" id="file-input" name="file-img" class="form-control-file">
+                        </div>
+                     </div>
+                  </form>
+               </div>
+               <div class="card-footer">
+                  <button type="submit" class="btn btn-primary btn-sm">
+                  <i class="fa fa-dot-circle-o"></i> Thêm
+                  </button>
+               </div>
+            </div>
+         </div>
+
+         <div class="tab-pane fade" id="preview" role="tabpanel" aria-labelledby="preview-tab">
+            <div class="w3-content" style="width:100%">
+            @foreach($slide as $items)
+            <u>{{ $items->id_slider}}</u>
+            <img class="mySlides" src="{{ $items->anh }}">
+            @endforeach
+            </div>
+            <div class="w3-center">
+                <div class="w3-section">
+                    <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
+                    <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
+                </div>
+            </div>
+        </div>
+      </div>
+   </div>
+</div>
+</div>
+            <div class="card">
+   <div class="card-body">
+      <div class="card-header text-danger">
+         Quản Lý Danh Muc
+      </div>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+         <li class="nav-item">
+            <a class="nav-link active show" id="cate-tab" data-toggle="tab" href="#cate" role="tab" aria-controls="home" aria-selected="true">Danh Mục</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#addcate" role="tab" aria-controls="profile" aria-selected="false">Thêm Danh Mục</a>
+         </li>
+
+      </ul>
+      <div class="tab-content pl-3 p-1" id="myTabContent">
+         <div class="tab-pane fade active show" id="cate" role="tabpanel" aria-labelledby="cate-tab">
+            <table class="table table-data2">
+               <thead>
+                  <tr>
+                     <th>ID</th>
+                     <th>Tên Danh Mục</th>
+                     <th>Trạng Tháj</th>
+                     <th></th>
+                  </tr>
+               </thead>
+               <tbody>
+                  @foreach($cate as $item)
+                  <tr class="tr-shadow">
+                     <td>{{ $item->id_cate}}</td>
+                     <td>{{ $item->name_cate}}</td>
+                     <td>{{ $item->status}}</td>
+                     <td>
+                        <div class="table-data-feature">
+                           <a href="{{ route('cate.edit',['id_cate' => "$item->id_cate" ]) }}" class="item btn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                           <i class="zmdi zmdi-edit"></i>
+                           </a>
+                           <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                           <i class="zmdi zmdi-delete"></i>
+                           </button>
+                        </div>
+                     </td>
+                  </tr>
+                  @endforeach
+               </tbody>
+            </table>
+         </div>
+
+         <div class="tab-pane fade" id="addcate" role="tabpanel" aria-labelledby="addcate-tab">
+            <div class="card">
+               <div class="card-header">
+                  <strong>Basic Form</strong> Category
+               </div>
+               <div class="card-body card-block">
+                  <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                     @csrf
+                     <div class="row form-group">
+                        <div class="col col-md-3">
+                           <label for="text-input" class=" form-control-label">Tên Danh Mục</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                           <input type="text" id="text-input" name="name-cate" class="form-control">
+                           <!-- <small class="form-text text-muted">This is a help text</small> -->
+                        </div>
+                     </div>
+                     <div class="row form-group">
+                        <div class="col col-md-3">
+                           <label for="file-input" class=" form-control-label">Trạng Tháj</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                        <select name="status" id="status">
+                        <option value="1">Hjen Thj</option>
+                        <option value="2">Ẩn</option>
+                        </select>
                         </div>
                      </div>
                   </form>

@@ -32,7 +32,6 @@
     <script src="{{ asset('assets/js/vendor/modernizr-2.8.3.min.js') }}"></script>
 </head>
     @include('layout.head')
-    @include('layout.slider')
     <div class="main-wrapper">
     @yield('content')
     </div>
